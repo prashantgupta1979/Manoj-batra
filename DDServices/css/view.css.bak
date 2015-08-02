@@ -1,0 +1,86 @@
+body 
+{
+	font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+	color: #404040;
+	background: #FFFFFF;
+}
+#addNewBtnDiv
+{
+	position:relative;
+	text-align:center;
+}
+#addNewBtn
+{
+	position:relative;
+}
+#tblData
+{
+	position:relative;
+	width:96%;
+}
+#tblData thead tr th
+{
+	text-align:center;
+	width:24px;
+}
+#tblData tbody tr td
+{
+	text-align:center;
+	width:24px;
+}
+.btnSave
+{
+	cursor:pointer;
+}
+.btnDelete
+{
+	cursor:pointer;
+}
+.btnEdit
+{
+	cursor:pointer;
+}
+.btnUpdate
+{
+	cursor:pointer;
+}
+#dataTable thead th
+{
+	background-color: #167F92;
+	color:white;
+	font-weight:bold;
+	text-align:center;
+	max-width:50px;
+}
+
+#dataTable tbody td
+{
+	max-width:50px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding:5px;
+	text-align: center;
+}
+#myToolTip
+{
+	position:absolute;
+
+	width:270px;
+	color: #0000FF;
+	background-color: #FFFF99;
+	font-weight:bold;
+	font-size: 1em;
+	text-align:center;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px; 
+	-o-border-radius: 8px; 
+	border-radius: 8px;
+	padding:5px;
+
+}
+
+textarea.myclass
+{
+	height: 33px;
+}

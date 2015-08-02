@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GeolocationService" CodeBehind="~/App_Code/GeolocationService.cs" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>

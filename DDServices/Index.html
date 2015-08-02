@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Add | Delete | Edit </title>
+		<script src='Script/jquery-1.10.2.js'></script>
+		<script src='Script/bootstrap.js'></script>
+		<script src='Script/jquery-ui.js'></script>
+		<script src='Script/App/tooltip.js'></script>
+		<script src='Script/jquery.tooltipster.js'></script>
+		<script src='Script/App/Main.js'></script>
+		<link rel='stylesheet' href='css/jquery-ui.css' type='text/css' />
+		<link rel='stylesheet' href='css/bootstrap.css' type='text/css' />
+		<link rel='stylesheet' href='css/tooltipster.css' type='text/css' />
+		<link rel='stylesheet' href='css/view.css' type='text/css' />
+	</head>
+	<body>
+		<BR>
+		<div id='addNewBtnDiv'>
+			<button class='btn btn-danger' id='addNewBtn'><b>Add New Record</b></button><BR><BR><BR>
+		</div>
+
+		<table id='quickSearch' align='center'>
+			<tr>
+				<td>
+					<span><b>Quick Search :</b></span>
+				</td>
+				<td>
+					<input type='text' id='search' class='form-control' placeholder='Quick Search'/>
+				</td>
+			</tr>
+		</table>
+
+		<table border='3' class='table table-striped' id='dataTable'>
+			<thead>
+				<tr>
+					<th>Day | Date | Time</th>
+					<th>Name</th>
+					<th>Address</th>
+					<th>Cell Number</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<BR><BR><BR>
+		<div id='myToolTip'></div>
+
+	</body>
+</html>

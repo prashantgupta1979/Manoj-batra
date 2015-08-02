@@ -1,0 +1,730 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
+-- --------------------------------------------------
+-- Date Created: 03/24/2015 22:04:43
+-- Generated from EDMX file: C:\Users\YAKSHU\Documents\Visual Studio 2010\Projects\MasterData\MasterData\Model1.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [DD];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[MST_CITY]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_CITY];
+GO
+IF OBJECT_ID(N'[dbo].[MST_COUNTRY]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_COUNTRY];
+GO
+IF OBJECT_ID(N'[dbo].[MST_DISTRICT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_DISTRICT];
+GO
+IF OBJECT_ID(N'[dbo].[MST_HUB]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_HUB];
+GO
+IF OBJECT_ID(N'[dbo].[MST_MALL]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_MALL];
+GO
+IF OBJECT_ID(N'[dbo].[MST_MESSAGE]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_MESSAGE];
+GO
+IF OBJECT_ID(N'[dbo].[MST_REGION]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_REGION];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_COMMENTS]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_COMMENTS];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_COMMENTS_LIKES]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_COMMENTS_LIKES];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_DETAIL_MAIN]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_DETAIL_MAIN];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_DETAIL_MAIN_HISTORY]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_DETAIL_MAIN_HISTORY];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_DETAIL_MAIN_REJECT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_DETAIL_MAIN_REJECT];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_DETAIL_MAIN_STAGGING]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_DETAIL_MAIN_STAGGING];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_IMAGE_AUDIT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_IMAGE_AUDIT];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_IMAGE_MAIN]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_IMAGE_MAIN];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_IMAGE_REJECT]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_IMAGE_REJECT];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_LIKES]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_LIKES];
+GO
+IF OBJECT_ID(N'[dbo].[MST_SHOP_REJECTION_REASON]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_SHOP_REJECTION_REASON];
+GO
+IF OBJECT_ID(N'[dbo].[MST_TOWN]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_TOWN];
+GO
+IF OBJECT_ID(N'[dbo].[MST_USER]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_USER];
+GO
+IF OBJECT_ID(N'[dbo].[MST_USER_HISTORY]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MST_USER_HISTORY];
+GO
+IF OBJECT_ID(N'[dbo].[TXN_ERROR_LOG]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TXN_ERROR_LOG];
+GO
+IF OBJECT_ID(N'[dbo].[TXN_PAGE_TRACKING]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TXN_PAGE_TRACKING];
+GO
+IF OBJECT_ID(N'[dbo].[TXN_SHOP_TRACKING]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TXN_SHOP_TRACKING];
+GO
+IF OBJECT_ID(N'[dbo].[TXN_USER_TRACKING]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TXN_USER_TRACKING];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'MST_CITY'
+CREATE TABLE [dbo].[MST_CITY] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [City_Name] varchar(100)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_COUNTRY'
+CREATE TABLE [dbo].[MST_COUNTRY] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Country_Name] varchar(100)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_DISTRICT'
+CREATE TABLE [dbo].[MST_DISTRICT] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [District_Name] varchar(100)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_HUB'
+CREATE TABLE [dbo].[MST_HUB] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Hub_Name] varchar(100)  NULL,
+    [Country_Id] int  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_MALL'
+CREATE TABLE [dbo].[MST_MALL] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [District_Id] int  NULL,
+    [Town_Id] int  NULL,
+    [Mall_Name] varchar(200)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_MESSAGE'
+CREATE TABLE [dbo].[MST_MESSAGE] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Message] varchar(200)  NULL,
+    [Created_By] varchar(100)  NULL,
+    [Created_Date] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_REGION'
+CREATE TABLE [dbo].[MST_REGION] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Region_Name] varchar(100)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_COMMENTS'
+CREATE TABLE [dbo].[MST_SHOP_COMMENTS] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Comment] varchar(100)  NULL,
+    [Likes_Count] int  NULL,
+    [IP_Address] varchar(20)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_COMMENTS_LIKES'
+CREATE TABLE [dbo].[MST_SHOP_COMMENTS_LIKES] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Comment_Id] int  NULL,
+    [IP_Address] varchar(20)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_DETAIL_MAIN'
+CREATE TABLE [dbo].[MST_SHOP_DETAIL_MAIN] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Name] varchar(200)  NOT NULL,
+    [Shop_Tag_Line] varchar(300)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [District_Id] int  NULL,
+    [Town_Id] int  NULL,
+    [Mall_Id] int  NULL,
+    [Address] varchar(1000)  NOT NULL,
+    [Primary_Contact_No] varchar(15)  NOT NULL,
+    [Secondary_Contact_No1] varchar(15)  NULL,
+    [Secondary_Contact_No2] varchar(15)  NULL,
+    [Secondary_Contact_No3] varchar(15)  NULL,
+    [Primary_Email] varchar(200)  NULL,
+    [Secondary_Email] varchar(200)  NULL,
+    [Website] varchar(200)  NULL,
+    [Nearest_Landmark] varchar(200)  NULL,
+    [Nearest_Metro] varchar(100)  NULL,
+    [Category] varchar(200)  NULL,
+    [Products] varchar(200)  NULL,
+    [Brands] varchar(200)  NULL,
+    [Happy_Hours] varchar(10)  NULL,
+    [Description] varchar(1000)  NULL,
+    [Days_Open] varchar(100)  NULL,
+    [Shop_Timings] varchar(100)  NULL,
+    [Latitude] varchar(100)  NULL,
+    [Lognitude] varchar(100)  NULL,
+    [Payment_Received] varchar(1)  NULL,
+    [Shop_Category] varchar(2)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Last_Rejection_Reason] varchar(300)  NULL,
+    [Created_By] varchar(100)  NULL,
+    [Created_Date] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modifed_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_DETAIL_MAIN_HISTORY'
+CREATE TABLE [dbo].[MST_SHOP_DETAIL_MAIN_HISTORY] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Shop_Name] varchar(200)  NOT NULL,
+    [Shop_Tag_Line] varchar(300)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [District_Id] int  NULL,
+    [Town_Id] int  NULL,
+    [Mall_Id] int  NULL,
+    [Address] varchar(1000)  NOT NULL,
+    [Primary_Contact_No] varchar(15)  NOT NULL,
+    [Secondary_Contact_No1] varchar(15)  NULL,
+    [Secondary_Contact_No2] varchar(15)  NULL,
+    [Secondary_Contact_No3] varchar(15)  NULL,
+    [Primary_Email] varchar(200)  NULL,
+    [Secondary_Email] varchar(200)  NULL,
+    [Website] varchar(200)  NULL,
+    [Nearest_Landmark] varchar(200)  NULL,
+    [Nearest_Metro] varchar(100)  NULL,
+    [Category] varchar(200)  NULL,
+    [Products] varchar(200)  NULL,
+    [Brands] varchar(200)  NULL,
+    [Happy_Hours] varchar(10)  NULL,
+    [Description] varchar(1000)  NULL,
+    [Days_Open] varchar(100)  NULL,
+    [Shop_Timings] varchar(100)  NULL,
+    [Latitude] varchar(100)  NULL,
+    [Lognitude] varchar(100)  NULL,
+    [Payment_Received] varchar(1)  NULL,
+    [Shop_Category] varchar(2)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Last_Rejection_Reason] varchar(300)  NULL,
+    [Created_By] varchar(100)  NULL,
+    [Created_Date] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modifed_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_DETAIL_MAIN_REJECT'
+CREATE TABLE [dbo].[MST_SHOP_DETAIL_MAIN_REJECT] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Shop_Name] varchar(200)  NOT NULL,
+    [Shop_Tag_Line] varchar(300)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [District_Id] int  NULL,
+    [Town_Id] int  NULL,
+    [Mall_Id] int  NULL,
+    [Address] varchar(1000)  NOT NULL,
+    [Primary_Contact_No] varchar(15)  NOT NULL,
+    [Secondary_Contact_No1] varchar(15)  NULL,
+    [Secondary_Contact_No2] varchar(15)  NULL,
+    [Secondary_Contact_No3] varchar(15)  NULL,
+    [Primary_Email] varchar(200)  NULL,
+    [Secondary_Email] varchar(200)  NULL,
+    [Website] varchar(200)  NULL,
+    [Nearest_Landmark] varchar(200)  NULL,
+    [Nearest_Metro] varchar(100)  NULL,
+    [Category] varchar(200)  NULL,
+    [Products] varchar(200)  NULL,
+    [Brands] varchar(200)  NULL,
+    [Happy_Hours] varchar(10)  NULL,
+    [Description] varchar(1000)  NULL,
+    [Days_Open] varchar(100)  NULL,
+    [Shop_Timings] varchar(100)  NULL,
+    [Latitude] varchar(100)  NULL,
+    [Lognitude] varchar(100)  NULL,
+    [Payment_Received] varchar(1)  NULL,
+    [Shop_Category] varchar(2)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Last_Rejection_Reason] varchar(300)  NULL,
+    [Created_By] varchar(100)  NULL,
+    [Created_Date] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modifed_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_DETAIL_MAIN_STAGGING'
+CREATE TABLE [dbo].[MST_SHOP_DETAIL_MAIN_STAGGING] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Shop_Name] varchar(200)  NOT NULL,
+    [Shop_Tag_Line] varchar(300)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [District_Id] int  NULL,
+    [Town_Id] int  NULL,
+    [Mall_Id] int  NULL,
+    [Address] varchar(1000)  NOT NULL,
+    [Primary_Contact_No] varchar(15)  NOT NULL,
+    [Secondary_Contact_No1] varchar(15)  NULL,
+    [Secondary_Contact_No2] varchar(15)  NULL,
+    [Secondary_Contact_No3] varchar(15)  NULL,
+    [Primary_Email] varchar(200)  NULL,
+    [Secondary_Email] varchar(200)  NULL,
+    [Website] varchar(200)  NULL,
+    [Nearest_Landmark] varchar(200)  NULL,
+    [Nearest_Metro] varchar(100)  NULL,
+    [Category] varchar(200)  NULL,
+    [Products] varchar(200)  NULL,
+    [Brands] varchar(200)  NULL,
+    [Happy_Hours] varchar(10)  NULL,
+    [Description] varchar(1000)  NULL,
+    [Days_Open] varchar(100)  NULL,
+    [Shop_Timings] varchar(100)  NULL,
+    [Latitude] varchar(100)  NULL,
+    [Lognitude] varchar(100)  NULL,
+    [Payment_Received] varchar(1)  NULL,
+    [Shop_Category] varchar(2)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Last_Rejection_Reason] varchar(300)  NULL,
+    [Created_By] varchar(100)  NULL,
+    [Created_Date] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modifed_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_IMAGE_AUDIT'
+CREATE TABLE [dbo].[MST_SHOP_IMAGE_AUDIT] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Image_URL] varchar(100)  NOT NULL,
+    [Image_Description] varchar(1000)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Is_Primary] varchar(1)  NULL,
+    [Rejection_Reason] varchar(100)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [LAST_MODIFIED_BY] varchar(100)  NULL,
+    [LAST_MODIFIED_DATE] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_IMAGE_MAIN'
+CREATE TABLE [dbo].[MST_SHOP_IMAGE_MAIN] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Image_URL] varchar(100)  NOT NULL,
+    [Image_Description] varchar(1000)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Is_Primary] varchar(1)  NULL,
+    [Rejection_Reason] varchar(100)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [LAST_MODIFIED_BY] varchar(100)  NULL,
+    [LAST_MODIFIED_DATE] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_IMAGE_REJECT'
+CREATE TABLE [dbo].[MST_SHOP_IMAGE_REJECT] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Image_URL] varchar(100)  NOT NULL,
+    [Image_Description] varchar(1000)  NULL,
+    [Temp_Shop_Id] varchar(100)  NULL,
+    [Is_Primary] varchar(1)  NULL,
+    [Rejection_Reason] varchar(100)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [LAST_MODIFIED_BY] varchar(100)  NULL,
+    [LAST_MODIFIED_DATE] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_LIKES'
+CREATE TABLE [dbo].[MST_SHOP_LIKES] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Liked_By] varchar(100)  NULL,
+    [Liked_Date] datetime  NULL,
+    [IP_Address] varchar(20)  NULL
+);
+GO
+
+-- Creating table 'MST_SHOP_REJECTION_REASON'
+CREATE TABLE [dbo].[MST_SHOP_REJECTION_REASON] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Shop_Id] int  NULL,
+    [Rejection_Reason] varchar(100)  NOT NULL,
+    [Rejection_Type] varchar(2)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_TOWN'
+CREATE TABLE [dbo].[MST_TOWN] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Town_Name] varchar(100)  NULL,
+    [Country_Id] int  NULL,
+    [Hub_Id] int  NULL,
+    [Region_Id] int  NULL,
+    [City_Id] int  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_USER'
+CREATE TABLE [dbo].[MST_USER] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Email] varchar(200)  NULL,
+    [Password] varchar(50)  NULL,
+    [First_Name] varchar(100)  NULL,
+    [Last_Name] varchar(100)  NULL,
+    [Mobile_No] varchar(12)  NULL,
+    [Is_Email_authenticated] varchar(1)  NULL,
+    [User_Validation_Key] varchar(100)  NULL,
+    [User_Type] varchar(5)  NULL,
+    [Location_Pref] varchar(100)  NULL,
+    [Category_Pref] varchar(100)  NULL,
+    [Brand_Pref] varchar(100)  NULL,
+    [Is_Active] varchar(1)  NULL,
+    [Comment_Id] int  NULL,
+    [IP_Address] varchar(20)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'MST_USER_HISTORY'
+CREATE TABLE [dbo].[MST_USER_HISTORY] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [User_ID] int  NULL,
+    [Email] varchar(200)  NULL,
+    [Password] varchar(50)  NULL,
+    [First_Name] varchar(100)  NULL,
+    [Last_Name] varchar(100)  NULL,
+    [Mobile_No] varchar(12)  NULL,
+    [Is_Email_authenticated] varchar(1)  NULL,
+    [User_Validation_Key] varchar(100)  NULL,
+    [User_Type] varchar(5)  NULL,
+    [Location_Pref] varchar(100)  NULL,
+    [Category_Pref] varchar(100)  NULL,
+    [Brand_Pref] varchar(100)  NULL,
+    [Is_Active] varchar(1)  NULL,
+    [Comment_Id] int  NULL,
+    [IP_Address] varchar(20)  NULL,
+    [CREATED_BY] varchar(100)  NULL,
+    [CREATED_DATE] datetime  NULL,
+    [Last_Modified_By] varchar(100)  NULL,
+    [Last_Modified_Date] datetime  NULL
+);
+GO
+
+-- Creating table 'TXN_ERROR_LOG'
+CREATE TABLE [dbo].[TXN_ERROR_LOG] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Error_Message] varchar(200)  NULL,
+    [Ip_Address] varchar(20)  NULL,
+    [Action_Time] datetime  NULL,
+    [User_Id] varchar(50)  NULL
+);
+GO
+
+-- Creating table 'TXN_PAGE_TRACKING'
+CREATE TABLE [dbo].[TXN_PAGE_TRACKING] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [User_ID] int  NULL,
+    [Session_id] varchar(100)  NULL,
+    [Action_Time] datetime  NULL,
+    [Action] varchar(100)  NULL,
+    [Ip_Address] varchar(20)  NULL
+);
+GO
+
+-- Creating table 'TXN_SHOP_TRACKING'
+CREATE TABLE [dbo].[TXN_SHOP_TRACKING] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [Page_ID] int  NULL,
+    [Call_Time] datetime  NULL,
+    [User_Id] int  NULL,
+    [Ip_Address] varchar(20)  NULL
+);
+GO
+
+-- Creating table 'TXN_USER_TRACKING'
+CREATE TABLE [dbo].[TXN_USER_TRACKING] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [User_ID] int  NULL,
+    [Session_id] varchar(100)  NULL,
+    [Action_Time] datetime  NULL,
+    [Action] varchar(100)  NULL,
+    [Ip_Address] varchar(20)  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [City_ID] in table 'MST_CITY'
+ALTER TABLE [dbo].[MST_CITY]
+ADD CONSTRAINT [PK_MST_CITY]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Country_ID] in table 'MST_COUNTRY'
+ALTER TABLE [dbo].[MST_COUNTRY]
+ADD CONSTRAINT [PK_MST_COUNTRY]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [District_ID] in table 'MST_DISTRICT'
+ALTER TABLE [dbo].[MST_DISTRICT]
+ADD CONSTRAINT [PK_MST_DISTRICT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Hub_ID] in table 'MST_HUB'
+ALTER TABLE [dbo].[MST_HUB]
+ADD CONSTRAINT [PK_MST_HUB]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Mall_ID] in table 'MST_MALL'
+ALTER TABLE [dbo].[MST_MALL]
+ADD CONSTRAINT [PK_MST_MALL]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Message_ID] in table 'MST_MESSAGE'
+ALTER TABLE [dbo].[MST_MESSAGE]
+ADD CONSTRAINT [PK_MST_MESSAGE]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Region_ID] in table 'MST_REGION'
+ALTER TABLE [dbo].[MST_REGION]
+ADD CONSTRAINT [PK_MST_REGION]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_COMMENTS'
+ALTER TABLE [dbo].[MST_SHOP_COMMENTS]
+ADD CONSTRAINT [PK_MST_SHOP_COMMENTS]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_COMMENTS_LIKES'
+ALTER TABLE [dbo].[MST_SHOP_COMMENTS_LIKES]
+ADD CONSTRAINT [PK_MST_SHOP_COMMENTS_LIKES]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_DETAIL_MAIN'
+ALTER TABLE [dbo].[MST_SHOP_DETAIL_MAIN]
+ADD CONSTRAINT [PK_MST_SHOP_DETAIL_MAIN]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_DETAIL_MAIN_HISTORY'
+ALTER TABLE [dbo].[MST_SHOP_DETAIL_MAIN_HISTORY]
+ADD CONSTRAINT [PK_MST_SHOP_DETAIL_MAIN_HISTORY]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_DETAIL_MAIN_REJECT'
+ALTER TABLE [dbo].[MST_SHOP_DETAIL_MAIN_REJECT]
+ADD CONSTRAINT [PK_MST_SHOP_DETAIL_MAIN_REJECT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_DETAIL_MAIN_STAGGING'
+ALTER TABLE [dbo].[MST_SHOP_DETAIL_MAIN_STAGGING]
+ADD CONSTRAINT [PK_MST_SHOP_DETAIL_MAIN_STAGGING]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_IMAGE_AUDIT'
+ALTER TABLE [dbo].[MST_SHOP_IMAGE_AUDIT]
+ADD CONSTRAINT [PK_MST_SHOP_IMAGE_AUDIT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_IMAGE_MAIN'
+ALTER TABLE [dbo].[MST_SHOP_IMAGE_MAIN]
+ADD CONSTRAINT [PK_MST_SHOP_IMAGE_MAIN]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_IMAGE_REJECT'
+ALTER TABLE [dbo].[MST_SHOP_IMAGE_REJECT]
+ADD CONSTRAINT [PK_MST_SHOP_IMAGE_REJECT]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_LIKES'
+ALTER TABLE [dbo].[MST_SHOP_LIKES]
+ADD CONSTRAINT [PK_MST_SHOP_LIKES]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_SHOP_REJECTION_REASON'
+ALTER TABLE [dbo].[MST_SHOP_REJECTION_REASON]
+ADD CONSTRAINT [PK_MST_SHOP_REJECTION_REASON]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Town_ID] in table 'MST_TOWN'
+ALTER TABLE [dbo].[MST_TOWN]
+ADD CONSTRAINT [PK_MST_TOWN]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [User_ID] in table 'MST_USER'
+ALTER TABLE [dbo].[MST_USER]
+ADD CONSTRAINT [PK_MST_USER]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'MST_USER_HISTORY'
+ALTER TABLE [dbo].[MST_USER_HISTORY]
+ADD CONSTRAINT [PK_MST_USER_HISTORY]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TXN_ERROR_LOG'
+ALTER TABLE [dbo].[TXN_ERROR_LOG]
+ADD CONSTRAINT [PK_TXN_ERROR_LOG]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TXN_PAGE_TRACKING'
+ALTER TABLE [dbo].[TXN_PAGE_TRACKING]
+ADD CONSTRAINT [PK_TXN_PAGE_TRACKING]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TXN_SHOP_TRACKING'
+ALTER TABLE [dbo].[TXN_SHOP_TRACKING]
+ADD CONSTRAINT [PK_TXN_SHOP_TRACKING]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TXN_USER_TRACKING'
+ALTER TABLE [dbo].[TXN_USER_TRACKING]
+ADD CONSTRAINT [PK_TXN_USER_TRACKING]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------
