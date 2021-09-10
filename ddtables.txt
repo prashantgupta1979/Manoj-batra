@@ -1,4 +1,4 @@
-
+<a href="https://ibb.co/vvy7TZB"><img src="https://i.ibb.co/vvy7TZB/IMG-20200306-WA0017.jpg" alt="IMG-20200306-WA0017" border="0"></a>
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
